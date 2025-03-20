@@ -33,3 +33,17 @@ for(i=0; isGuest == false && i<guestsMail.length; i++){
 if(isGuest == false){
   console.log("La tua email NON è tra gli invitati.")
 }
+
+
+
+/* ******************************************** */
+/*                     DADI                     */
+/* ******************************************** */
+
+// definisco le variabili per il risultato del giocatore e del computer
+let userDie = Math.ceil(Math.random() * 6);
+let cpuDie = Math.ceil(Math.random() * 6);
+
+//stampo i risultati
+console.log("Il dado del giocatore ha fatto:", userDie);
+console.log("Il dado del computer ha fatto:", cpuDie);
