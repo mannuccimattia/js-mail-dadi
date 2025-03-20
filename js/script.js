@@ -18,3 +18,18 @@ let userMail = prompt("Inserisci il tuo indirizzo email");
 // stampo l'indirizzo email dell'utente
 console.log("Il tuo indirizzo email è ", userMail);
 
+let isGuest = false;  // variabile di controllo
+
+// ciclo la lista delle email fino a che non trovo una email uguale a quella inserita dall'utente
+for(i=0; isGuest == false && i<guestsMail.length; i++){
+  // se trovo una email uguale, assegno true alla variabile di controllo e stampo il rispettivo messaggio
+  if(guestsMail[i] === userMail){
+    isGuest = true;
+    console.log("La tua email è tra gli invitati!");
+  }
+
+}
+// se non trovo nessuna email uguale, stampo il rispettivo messaggio 
+if(isGuest == false){
+  console.log("La tua email NON è tra gli invitati.")
+}
