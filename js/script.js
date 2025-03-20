@@ -1,7 +1,6 @@
 /* ******************************************** */
 /*                     MAIL                     */
 /* ******************************************** */
-
 // definisco un array contenente la lista delle email degli invitati
 const guestsMail = [
   'mariorossi@mail.com',
@@ -15,13 +14,19 @@ const guestsMail = [
 
 // chiedo all'utente di inserire un indirizzo email
 let userMail = prompt("Inserisci il tuo indirizzo email");
-// stampo l'indirizzo email dell'utente
-console.log("Il tuo indirizzo email è ", userMail);
+
+// se l'utente non ha inserito nessun carattere, stampo un avviso. Altrimenti stampo l'email dell'utente
+if(userMail === null || userMail.length === 0){
+  console.log("Nessun indirizzo email inserito!")
+}
+else{
+  console.log("Il tuo indirizzo email è ", userMail);
+}
 
 let isGuest = false;  // variabile di controllo
 
 // ciclo la lista delle email fino a che non trovo una email uguale a quella inserita dall'utente
-for(i=0; isGuest == false && i<guestsMail.length; i++){
+for(i=0; userMail != null && isGuest == false && i<guestsMail.length; i++){
   // se trovo una email uguale, assegno true alla variabile di controllo e stampo il rispettivo messaggio
   if(guestsMail[i] === userMail){
     isGuest = true;
@@ -30,7 +35,7 @@ for(i=0; isGuest == false && i<guestsMail.length; i++){
 
 }
 // se non trovo nessuna email uguale, stampo il rispettivo messaggio 
-if(isGuest == false){
+if(userMail != null && isGuest == false && userMail.length != 0){
   console.log("La tua email NON è tra gli invitati.")
 }
 
@@ -39,7 +44,7 @@ if(isGuest == false){
 /* ******************************************** */
 /*                     DADI                     */
 /* ******************************************** */
-
+console.log("*************** DADI ***************")
 // definisco le variabili per il risultato del giocatore e del computer
 let userDie = Math.ceil(Math.random() * 6);
 let cpuDie = Math.ceil(Math.random() * 6);
