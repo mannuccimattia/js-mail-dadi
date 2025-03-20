@@ -47,3 +47,17 @@ let cpuDie = Math.ceil(Math.random() * 6);
 //stampo i risultati
 console.log("Il dado del giocatore ha fatto:", userDie);
 console.log("Il dado del computer ha fatto:", cpuDie);
+
+// stabilisco il vincitore
+// l'utente vince 
+if(userDie > cpuDie){
+  console.log("Il giocatore VINCE!");
+}
+// il computer vince
+else if(cpuDie > userDie){
+  console.log("Il computer VINCE!");
+}
+// pareggio
+else{
+  console.log("PAREGGIO! Gioca di nuovo.");
+}
